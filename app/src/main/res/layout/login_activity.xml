@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_main_layout"
+        android:layout_width="1035dp"
+        android:layout_height="1580dp"
+        android:background="#444444"
+        android:backgroundTint="#cc0000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gif"
+            android:layout_width="310dp"
+            android:layout_height="92dp"
+            android:src="@drawable/cnnnewsprima" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:src="@drawable/cnn"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Login"
+
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/et_user_name"
+            android:layout_width="308dp"
+            android:layout_height="65dp"
+            android:backgroundTint="@color/white"
+            android:hint="User Name"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:startIconDrawable="@drawable/ic_name"
+            tools:ignore="Autofill,HardcodedText,TextFields">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_et"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_password"
+            android:layout_width="309dp"
+            android:layout_height="89dp"
+            android:backgroundTint="@color/white"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textColorHint="#EDFBFB"
+            app:counterEnabled="true"
+            app:counterMaxLength="6"
+            app:counterTextColor="@color/white"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/white"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_lock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pass_et"
+                android:layout_width="300dp"
+                android:layout_height="54dp"
+                android:inputType="textEmailAddress"
+                android:maxLength="30"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="346dp"
+            android:layout_height="105dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="25dp">
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_corners"
+                android:backgroundTint="@color/white"
+                android:text="Reset"
+                android:textAllCaps="false"
+                android:textColor="#cc0000"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle,HardcodedText" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners"
+                android:backgroundTint="@color/white"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="#cc0000"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle,HardcodedText" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't Have an account already?"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/signupbutton"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textSize="15sp"
+            android:text="SignUp"
+            android:textColor="#cc0000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/gsignupbtn"
+            android:layout_width="229dp"
+            android:layout_height="38dp"
+            android:background="@drawable/rounded_minrad"
+            android:minHeight="40dp"
+            android:paddingTop="9dp"
+            android:textSize="15sp"
+            android:text="Continue with google"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#cc0000"
+            android:textStyle="bold"
+            app:icon="@drawable/googleicon"></TextView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
