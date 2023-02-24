@@ -14,8 +14,6 @@ import androidx.core.util.Pair
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
-//import com.android.aman.newsapp.NewsDetail
-//import com.android.aman.newsapp.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -26,7 +24,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.android.aman.newsapp.model.Article
 import kotlinx.android.synthetic.main.item_layout.view.*
 import com.bumptech.glide.request.target.Target
-import kotlinx.android.synthetic.main.signup_activity.view.*
+
 
 
  class Adapter(private val context: Context, private val list: ArrayList<Article>) :
@@ -44,33 +42,7 @@ import kotlinx.android.synthetic.main.signup_activity.view.*
     override fun getItemCount(): Int {
         return list.size
     }
-//added
 
-/* private val searchFilter:Filter = object : Filter() {
-    override fun performFiltering(constraint: CharSequence): FilterResults {
-        val results = FilterResults()
-        val query = constraint.toString()
-        if (query.isEmpty()){
-            results.values = tempList
-        }
-        else{
-            filteredList.clear()
-            for(item in tempList){
-                if(item.name.lowercase().contains(query.lowercase().trim{it <= ' '})){
-                    filteredList.add((item))
-                }
-            }
-            results.values=filteredList
-        }
-        return results
-    }
-
-  override fun publishResults(constraint: CharSequence, results: FilterResults) {
-        this@Adapter.arrayList = results.values as ArrayList<Article>
-      notifyDataSetChanged()
-    }
-
-}*///Till this added
     interface OnItemClickListener {
         fun onItemClick(view: View?, position: Int) {
 

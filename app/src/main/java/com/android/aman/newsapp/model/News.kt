@@ -1,6 +1,5 @@
 package com.android.aman.newsapp.model
 
-//import com.android.aman.newsapp.model.News
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

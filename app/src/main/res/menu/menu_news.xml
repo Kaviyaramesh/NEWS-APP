@@ -10,17 +10,5 @@
         android:title="Share"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:icon="@drawable/ic_sort"
-        android:title="open in browser"
-        app:showAsAction="ifRoom">
-
-        <menu>
-            <item
-                android:id="@+id/view_browser"
-                android:title="open in browser"
-                app:showAsAction="never" />
-        </menu>
-    </item>
 
 </menu>

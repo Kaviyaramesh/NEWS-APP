@@ -15,12 +15,11 @@
         android:layout_marginStart="104dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:contentDescription="CNN logo"
+        android:contentDescription="@string/cnn_logo"
         android:src="@drawable/cnn"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
@@ -29,24 +28,22 @@
         android:layout_centerInParent="true"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="470dp"
-
         android:elevation="10dp"
         android:ellipsize="marquee"
         android:fadingEdge="horizontal"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
-
         android:shadowColor="@color/colorTextSubtitle"
         android:singleLine="true"
-        android:text="Enter your details to signup!"
+        android:text="@string/enter_your_details_to_signup"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHighlight="@color/colorTextSubtitle"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/et_user_name"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
     <TextView
@@ -56,9 +53,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="57dp"
-        android:text="SIGNUP"
+        android:fontFamily="@font/brandon_grotesque_black"
+        android:text="@string/signup"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -73,15 +71,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="46dp"
-        android:text="User Name :"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
+        android:text="@string/user_name"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/et_user_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.textfield.TextInputLayout
 
@@ -90,8 +88,8 @@
         android:layout_height="50dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/rounded_corners"
-        android:hint="Enter userName"
-
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
+        android:hint="@string/enter_username"
         android:importantForAccessibility="no"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -100,44 +98,45 @@
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="@+id/textView3">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name_et"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:fontFamily="@font/brandon_grotesque_bold_italic"
             android:minHeight="48dp"
-            android:textColor="#cc0000"/>
+            android:textColor="#cc0000" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="31dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="28dp"
-        android:text="Password :"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
+        android:text="@string/password"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ed_confirm_password"
         app:layout_constraintEnd_toStartOf="@+id/et_password"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/et_password"
-        android:layout_width="210dp"
+        android:layout_width="214dp"
         android:layout_height="51dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_marginEnd="9dp"
         android:background="@drawable/rounded_corners"
         android:ems="30"
-        android:hint="Enter Password"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
+        android:hint="@string/enter_password"
         android:importantForAccessibility="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -148,14 +147,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:passwordToggleEnabled="true"
-        tools:ignore="MissingConstraints">
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pass_et"
             android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:textColor="#cc0000"/>
+            android:fontFamily="@font/brandon_grotesque_bold_italic"
+            android:textColor="#cc0000" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -165,25 +164,25 @@
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="12dp"
-        android:text="Confirm Password :"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
+        android:text="@string/confirmpassword"
         android:textColor="@color/white"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ed_confirm_password"
         app:layout_constraintEnd_toStartOf="@+id/ed_confirm_password"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/ed_confirm_password"
         android:layout_width="215dp"
         android:layout_height="53dp"
-
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="55dp"
         android:background="@drawable/rounded_corners"
-        android:hint="Confirm Password"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
+        android:hint="@string/confirm_password"
         android:importantForAccessibility="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -196,15 +195,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:passwordToggleEnabled="true"
-        tools:ignore="MissingConstraints">
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/conpass_et"
             android:layout_width="match_parent"
             android:layout_height="53dp"
+            android:fontFamily="@font/brandon_grotesque_bold_italic"
             android:minHeight="48dp"
-            android:textColor="#cc0000"/>
+            android:textColor="#cc0000" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -217,6 +216,7 @@
         android:background="@drawable/btn_corners"
         android:backgroundTint="@color/white"
         android:text="SUBMIT"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
         android:textSize="15sp"
         android:textColor="#cc0000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -234,8 +234,9 @@
         android:background="@drawable/btn_corners"
         android:backgroundTint="@color/white"
         android:enabled="true"
-android:textSize="15sp"
+        android:textSize="15sp"
         android:text="RESET"
+        android:fontFamily="@font/brandon_grotesque_bold_italic"
         android:textColor="#cc0000"
         app:layout_constraintBaseline_toBaselineOf="@+id/submitbutton"
         app:layout_constraintEnd_toStartOf="@+id/submitbutton"

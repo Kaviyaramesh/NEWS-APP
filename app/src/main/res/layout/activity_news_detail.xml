@@ -151,7 +151,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/brandon_grotesque_bold_italic"
                         android:text="Title of News"
-                        android:textColor="@color/colorTextTitle"
+
+                        android:textColor="#cc0000"
 
                         android:textSize="19sp"
                         android:textStyle="bold" />

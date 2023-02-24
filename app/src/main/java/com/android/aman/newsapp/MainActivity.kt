@@ -9,8 +9,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.webkit.WebSettings
-import android.webkit.WebView
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -31,16 +29,8 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() , SwipeRefreshLayout.OnRefreshListener{
 
-//lateinit var binding: ActivityMainBinding//added
-
-
-
-
     private val apiKey: String = "fe1386d861f343f2bbb08659b49bb6cb"
    var articles:ArrayList<Article> = ArrayList()
-
-
-    //var itemAnimator:Animation ?= null
 
     private lateinit var adapter: Adapter
     private lateinit var viewManger: RecyclerView.LayoutManager
@@ -48,12 +38,6 @@ class MainActivity : AppCompatActivity() , SwipeRefreshLayout.OnRefreshListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-    /*    val webView = findViewById<View>(R.id.view_browser) as WebView
-        val settings: WebSettings = webView.getSettings()
-        settings.javaScriptEnabled = true
-        webView.loadUrl("www.google.com")*/
 
         swipeRefresh.setOnRefreshListener(this)
         swipeRefresh.setColorSchemeResources(R.color.NavyBlue)
@@ -79,9 +63,7 @@ class MainActivity : AppCompatActivity() , SwipeRefreshLayout.OnRefreshListener{
         val country: String = utils.getCountry()
         val language: String = utils.getLanguage()
 
-        val call: Call<News>?
-
-        call = if (keyword.isNotEmpty()) {
+        val call: Call<News>? = if (keyword.isNotEmpty()) {
             apiInterface?.getNewsSearch(keyword, language, "publishedAt", apiKey)
         } else {
             apiInterface?.getNews(country, apiKey)
@@ -95,7 +77,6 @@ class MainActivity : AppCompatActivity() , SwipeRefreshLayout.OnRefreshListener{
                 Toast.makeText(this@MainActivity, "No Result", Toast.LENGTH_SHORT).show()
             }
 
-            //@SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<News>, response: Response<News>) {
                 if (response!!.isSuccessful && response.body()?.article != null) {
                     if (articles.isNotEmpty()) {
@@ -160,7 +141,7 @@ class MainActivity : AppCompatActivity() , SwipeRefreshLayout.OnRefreshListener{
 
     return true
 }
-//for logout alert
+//logout alert
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             val id = item.itemId
             if (id == R.id.logout) {
@@ -186,17 +167,11 @@ class MainActivity : AppCompatActivity() , SwipeRefreshLayout.OnRefreshListener{
             finish()
         }
 
-
-
-
-    //for refresh
-
     override fun onRefresh()
     {
         loadJson("")
     }
 
-//for loading refresh
     private fun onLoadRefresh(keyword: String) {
         swipeRefresh.post {
             Runnable {

@@ -7,4 +7,21 @@
     <string name="description">Description</string>
     <string name="source">Source</string>
     <string name="defaul_web_client_id">id</string>
+    <string name="user_name">User Name :</string>
+    <string name="signup">SIGNUP</string>
+    <string name="enter_your_details_to_signup">Enter your details to signup!</string>
+    <string name="enter_username">Enter userName</string>
+    <string name="password">Password :</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirmpassword">Confirm Password :</string>
+    <string name="submit">SUBMIT</string>
+    <string name="reset">RESET</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login">LOGIN</string>
+    <string name="Password">Password</string>
+    <string name="cnn_logo">CNN logo</string>
+    <string name="or">OR</string>
+    <string name="Signup">SignUp</string>
+    <string name="don_t_have_an_account_already">Don\'t Have an account already?</string>
 </resources>

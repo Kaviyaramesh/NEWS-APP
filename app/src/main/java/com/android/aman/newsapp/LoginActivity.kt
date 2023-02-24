@@ -1,36 +1,20 @@
 package com.android.aman.newsapp
 
-
-//import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent//intent
-
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import android.view.View//view
-import android.widget.*//widgets
-
-import androidx.activity.result.contract.ActivityResultContracts//ActivityResultContracts
-//import com.android.aman.newsapp.R.id//id
-
+import android.view.View
+import android.widget.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient//
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.Api
 import com.google.android.material.textfield.TextInputEditText
-//import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.auth.FirebaseAuth//firebase
-
-import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 
-
 class LoginActivity : AppCompatActivity() {
-
 
     private lateinit var textView: TextView
     private lateinit var client:GoogleSignInClient
@@ -57,32 +41,31 @@ class LoginActivity : AppCompatActivity() {
 
             startActivityForResult(intent, 10001)
 
-
-
     }
 
-        val et_user_name = findViewById(R.id.name_et) as TextInputEditText
-        val et_password = findViewById(R.id.pass_et) as TextInputEditText
-        val btn_reset = findViewById(R.id.btn_reset) as Button
-        val btn_submit = findViewById(R.id.btn_submit) as Button
-        val btn_Signup = findViewById<Button>(R.id.signupbutton)
+        val etusername = findViewById<TextInputEditText>(R.id.name_et)
+        val etpassword = findViewById<TextInputEditText>(R.id.pass_et)
+        val btnreset = findViewById<Button>(R.id.btn_reset)
+        val btnsubmit = findViewById<Button>(R.id.btn_submit)
+        val btnSignup = findViewById<Button>(R.id.signupbutton)
 
-//reset
-        btn_reset.setOnClickListener {
-            et_user_name.setText("")
-            et_password.setText("")
+
+        btnreset.setOnClickListener {
+            etusername.setText("")
+            etpassword.setText("")
         }
 
-//signup
-        btn_Signup.setOnClickListener {
+
+        btnSignup.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
+            Toast.makeText(applicationContext, "Signup now!", Toast.LENGTH_LONG).show()
         }
 
-//submit
-        btn_submit.setOnClickListener(object : View.OnClickListener {
+
+        btnsubmit.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                username = et_user_name.text.toString()
-                password = et_password.text.toString()
+                username = etusername.text.toString()
+                password = etpassword.text.toString()
                 isAllFieldsChecked = checkAllFields()
 
                 if (isAllFieldsChecked) {
@@ -100,23 +83,25 @@ class LoginActivity : AppCompatActivity() {
             }
 
             private fun checkAllFields(): Boolean {
-                if (username.isEmpty()) {
-                    et_user_name.error = "Enter username!"
-                    return false
+                when {
+                    username.isEmpty() -> {
+                        etusername.error = "Enter username!"
+                        return false
+                    }
+                    username != "kaviya" -> {
+                        etusername.error = "Incorrect Username!"
+                        return false
+                    }
+                    password.isEmpty() -> {
+                        etpassword.error = "Enter Password!"
+                        return false
+                    }
+                    password != "kaviya" -> {
+                        etpassword.error = "Incorrect Password!"
+                        return false
+                    }
+                    else -> return true
                 }
-                if (username != "kaviya") {
-                    et_user_name.error = "Incorrect Username!"
-                    return false
-                }
-                if (password.isEmpty()) {
-                    et_password.error = "Enter Password!"
-                    return false
-                }
-                if (password != "kaviya") {
-                    et_password.error = "Incorrect Password!"
-                    return false
-                }
-                return true
             }
         })
 }
@@ -145,6 +130,7 @@ class LoginActivity : AppCompatActivity() {
                         FirebaseAuth.getInstance().signOut()
 
                         startActivity(i)
+                        Toast.makeText(applicationContext, "Login successful", Toast.LENGTH_LONG).show()
 
                     }else
                     {

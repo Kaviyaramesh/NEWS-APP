@@ -8,7 +8,6 @@ object ApiClient {
 
     var retrofit: Retrofit? = null
     private const val BASE_URL = "https://newsapi.org/v2/"
-    // private const val BASE_URL = " https://jsonplaceholder.typicode.com/"
 
     val getApiClient: Retrofit?
         get() {
